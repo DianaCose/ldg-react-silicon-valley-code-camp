@@ -4,7 +4,7 @@ export const posts = [
       title:" Title1",
       author: "Eva cu Vanilie",
       facebookHandler: "link",
-      favoritePost: true,
+      favorite: true,
       description: "bla bla bla bla bla"
     },
     {
@@ -12,7 +12,7 @@ export const posts = [
       title:" Title1",
       author: "Eva cu Vanilie",
       facebookHandler: "link",
-      favoritePost: true,
+      favorite: false,
       description: "bla bla bla bla bla"
     },
     {
@@ -20,7 +20,7 @@ export const posts = [
       title:" Title1",
       author: "Eva cu Vanilie",
       facebookHandler: "link",
-      favoritePost: true,
+      favorite: false,
       description: "bla bla bla bla bla"
     },
     {
@@ -28,7 +28,7 @@ export const posts = [
       title:" Title1",
       author: "Eva cu Vanilie",
       facebookHandler: "link",
-      favoritePost: true,
+      favoritePost: false,
       description: "bla bla bla bla bla"
     },
     {
@@ -36,7 +36,7 @@ export const posts = [
       title:" Title1",
       author: "Eva cu Vanilie",
       facebookHandler: "link",
-      favoritePost: true,
+      favoritePost: false,
       description: "bla bla bla bla bla"
     },
     {
@@ -44,7 +44,7 @@ export const posts = [
       title:" Title1",
       author: "Eva cu Vanilie",
       facebookHandler: "link",
-      favoritePost: true,
+      favorite: true,
       description: "bla bla bla bla bla"
     },
     {
@@ -52,7 +52,7 @@ export const posts = [
       title:" Title1",
       author: "Eva cu Vanilie",
       facebookHandler: "link",
-      favoritePost: true,
+      favorite: true,
       description: "bla bla bla bla bla"
     },
     {
@@ -60,7 +60,7 @@ export const posts = [
       title:" Title1",
       author: "Eva cu Vanilie",
       facebookHandler: "link",
-      favoritePost: true,
+      favorite: false,
       description: "bla bla bla bla bla"
     },
     {
@@ -68,7 +68,7 @@ export const posts = [
       title:" Title1",
       author: "Eva cu Vanilie",
       facebookHandler: "link",
-      favoritePost: true,
+      favorite: true,
       description: "bla bla bla bla bla"
     },
     {
@@ -76,7 +76,7 @@ export const posts = [
       title:" Title1",
       author: "Eva cu Vanilie",
       facebookHandler: "link",
-      favoritePost: true,
+      favorite: false,
       description: "bla bla bla bla bla"
     }
   ];
