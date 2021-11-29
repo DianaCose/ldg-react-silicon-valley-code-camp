@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import HomePage from '../src/components/Homepage';
+import App from '../src/components/App';
 
 export default function Home() {
   return (
@@ -28,7 +28,7 @@ export default function Home() {
       </Head>
 
       <div>
-        <HomePage />
+        <App />
       </div>
     </>
   )

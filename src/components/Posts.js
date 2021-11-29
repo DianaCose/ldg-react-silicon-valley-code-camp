@@ -1,48 +1,21 @@
-import {posts} from '../../MyPostsDB';
 import Post from '../components/Post.js';
-import { useState, useEffect } from 'react';
 import ReactPlaceholder from 'react-placeholder/lib';
+import useRequestPosts, { REQUEST_STATUS } from '../hooks/useRequestPosts.js';
+import { useContext } from 'react';
+import { ThemeContext } from './Layout';
+import { FilterContext } from '../context/FilterContext.js';
 
 const Posts = () => {
 
-    const [favoritePost, setFavoritePost] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
-    const [hasErrored, setHasErrored] = useState(false);
-    const [error, setError] = useState('');
+    const { theme } = useContext(ThemeContext);
 
-    const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+    const {
+        favoritePost, requestStatus, error, onFavoriteToggle
+    } = useRequestPosts(1000);
 
-    useEffect(() => {
-        async function delayFunc(){
-            try {
-                await delay(2000);
-                setIsLoading(false);
-                setFavoritePost(posts)
-            } catch (e) {
-                setIsLoading(false);
-                setHasErrored(true);
-                setError(e);
-            }
-        }
-        delayFunc()},
-        [] );
+    const { searchQuery } = useContext(FilterContext);
 
-    const onFavoriteToggle = (id) => {
-        const postToChange = favoritePost.find(function (rec) {
-            return rec.id === id;
-        })
-        const updatedPost = {
-            ...postToChange,
-            favorite: !postToChange.favorite
-        };
-        const newFavoritePost = favoritePost.map( function(rec) { 
-            return rec.id === id ? updatedPost : rec 
-        });
-
-        setFavoritePost(newFavoritePost);
-    }
-
-    if (hasErrored === true) {
+    if (requestStatus === REQUEST_STATUS.FAILURE) {
         return (
             <div className = "text-danger" >
                 ERROR: <b>loading posts failed {error}</b>
@@ -51,21 +24,26 @@ const Posts = () => {
     }
 
     return ( 
-        <div>
+        <div className = { 
+            theme === 'light' ? 'light' : 'dark'
+            }>
             <ReactPlaceholder 
                 type= 'media'
                 rows={15}
-                ready={isLoading === false}
+                ready={requestStatus === REQUEST_STATUS.SUCCESS}
                 >
                 <div className="row p-2 m-5">
-                    { favoritePost.map( function (post){
+                    { favoritePost
+                    //.filter((search) => search.title.toLowerCase().includes(searchQuery))
+                    .map( function (post){
                         return(
                             <Post 
                                 key={post.id} 
                                 post={post} 
                                 onFavoriteToggle={() => {
                                     onFavoriteToggle(post.id)
-                                }} />       
+                                }}
+                     />       
                         )})
                         }
                 </div>          

@@ -2,18 +2,16 @@
 
 html,
 body {
-  background-color:whitesmoke;
+  background:whitesmoke;
   font-family: 'Courier New', Courier, monospace;
 }
-
-a {
-  color: inherit;
+a{
   text-decoration: none;
 }
-
 * {
   box-sizing: border-box;
 }
+
 .action {
   display: flex;
   flex-wrap: wrap;
@@ -45,18 +43,22 @@ a {
 }
 
 .light{
-  background-color:whitesmoke;
+  background:whitesmoke;
 }
 
 .dark {
   background: #06301b;
 }
 
-.dark .dark-theme-header {
-  background-color: #06301b;
+.dark .dark-theme-toolbar {
+  background: #06301b;
 }
 
 .dark .dark-theme-text {
   color: white !important;
 }
 
+.card-height {
+  height: 590px;
+  overflow: scroll;
+}
