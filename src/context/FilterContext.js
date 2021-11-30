@@ -1,7 +1,7 @@
 import React, {createContext} from "react";
 import useFilter from "../hooks/useFilter";
 
-export const FilterContext = createContext('');
+export const FilterContext = createContext();
 
 
 const FilterProvider = ({children}) => {

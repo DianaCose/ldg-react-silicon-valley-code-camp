@@ -36,7 +36,7 @@ const Toolbar = () => {
                             type="text" 
                             className="form-control" 
                             placeholder='Search...'
-                            onChange={ function (event) {
+                            onChange={ (event) => {
                                 setSearchQuery = setSearchQuery(event.target.value);
                             }
                         } />

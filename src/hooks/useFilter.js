@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const useFilter = () => {
 
-    const [ searchQuery, setSearchQuery ] = useState('');
+    const [ searchQuery, setSearchQuery ] = useState("");
 
 return {
         searchQuery,
