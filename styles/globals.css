@@ -1,0 +1,64 @@
+@import url('https://use.fontawesome.com/releases/v5.7.0/css/all.css');
+
+html,
+body {
+  background:whitesmoke;
+  font-family: 'Courier New', Courier, monospace;
+}
+a{
+  text-decoration: none;
+}
+* {
+  box-sizing: border-box;
+}
+
+.action {
+  display: flex;
+  flex-wrap: wrap;
+  color: #7a7a7a;
+  font-size: 14px;
+}
+
+.action span {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+  cursor: pointer;
+}
+
+.action span:first-child:hover {
+  color: #ec670e;
+}
+
+.action span:last-child:hover {
+  color: #b52222;
+}
+
+.action i {
+  font-size: 20px;
+}
+
+.action .fa-angle-down {
+  font-size: 16px;
+}
+
+.light{
+  background:whitesmoke;
+}
+
+.dark {
+  background: #06301b;
+}
+
+.dark .dark-theme-toolbar {
+  background: #06301b;
+}
+
+.dark .dark-theme-text {
+  color: white !important;
+}
+
+.card-height {
+  height: 590px;
+  overflow: scroll;
+}
