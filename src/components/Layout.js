@@ -1,4 +1,5 @@
 import React, { createContext, useState } from "react";
+import FilterProvider from "../context/FilterContext";
 
 export const ThemeContext = createContext();
 
@@ -14,7 +15,9 @@ const Layout = ({startingTheme, children}) => {
             theme === 'light' ? 'container-fluid light' : 'container-fluid dark'
             }
         >
+        <FilterProvider>
           {children}
+        </FilterProvider>
         </div>
 
     </ThemeContext.Provider>

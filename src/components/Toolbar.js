@@ -11,7 +11,7 @@ const Toolbar = () => {
 
     return (           
   
-        <div className="container-fluid dark-theme-toolbar  mt-5">
+        <div className="container-fluid dark-theme-toolbar mt-5">
             <div className="row mb-3 ">
                 <div className="col">
                     <h4 className="dark-theme-text">Change Theme</h4>
@@ -36,9 +36,8 @@ const Toolbar = () => {
                             type="text" 
                             className="form-control" 
                             placeholder='Search...'
-                    
-                            onChange={ (event) => {
-                                setSearchQuery(event.target.value);
+                            onChange={ function (event) {
+                                setSearchQuery = setSearchQuery(event.target.value);
                             }
                         } />
                         <div className="input-group-append">

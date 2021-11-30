@@ -5,7 +5,7 @@ const Footer = () => {
        <div className={styles.footer}>
           <h4>Bye bye</h4>
           <a href="www.facebook.com">
-               <i class="fab fa-facebook"> Facebook</i> 
+               <i className="fab fa-facebook"> Facebook</i> 
           </a>
        </div>
      );

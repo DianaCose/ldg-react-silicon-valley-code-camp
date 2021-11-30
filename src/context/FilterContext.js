@@ -9,7 +9,7 @@ const FilterProvider = ({children}) => {
     const { searchQuery, setSearchQuery} = useFilter();
 
     return (  
-        <FilterContext.Provider value={
+        <FilterContext.Provider value= {
             { searchQuery, setSearchQuery,
         }
         }>

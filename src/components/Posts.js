@@ -8,12 +8,10 @@ import { FilterContext } from '../context/FilterContext.js';
 const Posts = () => {
 
     const { theme } = useContext(ThemeContext);
-
+    const { searchQuery } = useContext(FilterContext);
     const {
         favoritePost, requestStatus, error, onFavoriteToggle
     } = useRequestPosts(1000);
-
-    const { searchQuery } = useContext(FilterContext);
 
     if (requestStatus === REQUEST_STATUS.FAILURE) {
         return (
@@ -22,6 +20,7 @@ const Posts = () => {
             </div>
         )
     }
+
 
     return ( 
         <div className = { 
@@ -33,8 +32,9 @@ const Posts = () => {
                 ready={requestStatus === REQUEST_STATUS.SUCCESS}
                 >
                 <div className="row p-2 m-5">
+
                     { favoritePost
-                    //.filter((search) => search.title.toLowerCase().includes(searchQuery))
+                    .filter( function (post) { return post.title.toLowerCase().includes(searchQuery)})
                     .map( function (post){
                         return(
                             <Post 
@@ -45,7 +45,7 @@ const Posts = () => {
                                 }}
                      />       
                         )})
-                        }
+                        } 
                 </div>          
             </ReactPlaceholder>
           </div>
